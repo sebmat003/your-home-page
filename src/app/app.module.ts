@@ -16,6 +16,7 @@ import { NoteComponent } from './notes/note/note.component';
 import { StopwatchComponent } from './tools/stopwatch/stopwatch.component';
 import { CalculatorComponent } from './tools/calculator/calculator.component';
 import { TimerComponent } from './tools/timer/timer.component';
+import {UserModule} from "./user/user.module";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TimerComponent } from './tools/timer/timer.component';
     TimerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
