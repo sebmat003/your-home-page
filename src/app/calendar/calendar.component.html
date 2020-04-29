@@ -1,1 +1,16 @@
-<p>calendar works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="time">
+        {{ time | date: 'HH:mm:ss' }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="calendar">
+        <xunk-calendar [selectedDate]="date"></xunk-calendar>
+      </div>
+    </div>
+  </div>
+</div>

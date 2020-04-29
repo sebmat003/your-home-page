@@ -6,7 +6,6 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { NotesComponent } from './notes/notes.component';
 import { OptionsComponent } from './options/options.component';
 import { LinksComponent } from './links/links.component';
-import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { GmailComponent } from './gmail/gmail.component';
 import { ToolsComponent } from './tools/tools.component';
 import { AddNoteComponent } from './add-note/add-note.component';
@@ -17,6 +16,8 @@ import { StopwatchComponent } from './tools/stopwatch/stopwatch.component';
 import { CalculatorComponent } from './tools/calculator/calculator.component';
 import { TimerComponent } from './tools/timer/timer.component';
 import {UserModule} from "./user/user.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {XunkCalendarModule} from "xunk-calendar";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,6 @@ import {UserModule} from "./user/user.module";
     NotesComponent,
     OptionsComponent,
     LinksComponent,
-    SearchPanelComponent,
     GmailComponent,
     ToolsComponent,
     AddNoteComponent,
@@ -38,7 +38,9 @@ import {UserModule} from "./user/user.module";
   ],
   imports: [
     BrowserModule,
-    UserModule
+    UserModule,
+    BrowserAnimationsModule,
+    XunkCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
