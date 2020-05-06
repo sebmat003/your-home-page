@@ -1,0 +1,62 @@
+<div class="dark-background">
+</div>
+
+<ng-container *ngIf="noteService.addNew">
+  <div class="container" (clickOutside)="close()">
+    <div class="row">
+      <div class="title col-12">
+        <p>Add a note</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="content col-12">
+        <label for="content">Type content of a note (max 255 characters)</label>
+        <textarea [(ngModel)]="this.contentValue" name="content" id="content" rows="4"
+                  [maxLength]="255" [minLength]="1">
+        </textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="button col-4">
+        <button type="button" (click)="clear()">Clear</button>
+      </div>
+      <div class="button col-4">
+        <button type="button" (click)="add()"
+                [disabled]="this.contentValue == null || this.contentValue == ''">Add
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="noteService.editExisting">
+  <div class="container" (clickOutside)="close()">
+    <div class="row">
+      <div class="title col-12">
+        <p>Edit a note</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="content col-12">
+        <label for="content_1">Type content of a note (max 255 characters)</label>
+        <textarea [(ngModel)]="this.contentValue" name="content" id="content_1" rows="4"
+                  [maxLength]="255" [minLength]="1">
+        </textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="button col-4">
+        <button type="button" (click)="clear()">Clear</button>
+      </div>
+      <div class="button col-4">
+        <button type="button" (click)="save()"
+                [disabled]="this.contentValue == null || this.contentValue == ''">Save
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>

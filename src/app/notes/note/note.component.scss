@@ -1,0 +1,62 @@
+@import "../../../styles/colors";
+@import "../../../styles/functions";
+
+.container-fluid{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.note {
+  margin-top: 1%;
+  width: 100%;
+  padding: 2% 0;
+  background-color: $primary-color;
+  text-align: left;
+  transition: all 0.2s;
+  cursor: default;
+  position: relative;
+  color: white;
+
+  span {
+    display: block;
+    margin-left: 5%;
+    word-break: break-word;
+    &:first-child {
+      font-weight: bold;
+    }
+  }
+
+  p {
+    line-height: 0.3rem;
+  }
+
+}
+
+.note:hover, .note:active {
+  background-color: $secondary-color;
+
+  #title{
+    color: white;
+  }
+}
+
+button {
+  @include clear_style_in_button();
+}
+
+.buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1% 3%;
+}
+
+#title {
+  font-size: 0.8rem;
+  color: $secondary-lighten-color;
+}
+
+#content {
+  font-size: 1rem;
+}

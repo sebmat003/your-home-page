@@ -1,37 +1,38 @@
 <div class="container-fluid">
   <header>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-6 col-md-4 order-md-first">
         <div class="options">
           <button type="button">
-            <img src="../assets/images/settings.png" alt="settings" width="25" height="25">
+            <img src="../assets/images/settings.svg" alt="settings" width="25" height="25">
           </button>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-12 order-last col-md-4">
         <h2><em class="written-text">Your</em>HomePage</h2>
       </div>
-      <div class="col-md-4 login">
+      <div class="col-6 col-md-4 login order-md-last">
         <button type="button">
               <p style="display: inline-block;">Login</p>
               &nbsp;
-              <img src="../assets/images/user.png" alt="login" width="25" height="25" style="display: inline-block">
+              <img src="../assets/images/user.svg" alt="login" width="25" height="25" style="display: inline-block">
         </button>
       </div>
     </div>
   </header>
   <div class="row">
-    <div class="col-12 col-md-4">
-      <app-calendar></app-calendar>
+    <div class="col-12 col-md-3">
       <app-notes></app-notes>
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-6">
       <app-links></app-links>
     </div>
-    <div class="col-12 col-md-4">
-      <app-gmail></app-gmail>
+    <div class="col-12 col-md-3">
+      <app-calendar></app-calendar>
       <app-tools></app-tools>
     </div>
   </div>
+  <app-add-edit-note *ngIf="noteService.addNew || noteService.editExisting"
+                     [currentNote]="noteService.currentEditedNote"></app-add-edit-note>
 </div>
 

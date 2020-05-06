@@ -1,1 +1,21 @@
-<p>notes works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="row notes-header">
+        <div class="col-3">
+          <p>Notes</p>
+        </div>
+        <div class="col-6">
+          <button (click)="addNote()">
+            <img src="../../assets/images/plus.svg" alt="add note" width="20">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row notes">
+    <div class="col-12">
+      <app-note *ngFor="let i of notes.reverse()" [note]="i" ></app-note>
+    </div>
+  </div>
+</div>

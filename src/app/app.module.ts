@@ -6,9 +6,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { NotesComponent } from './notes/notes.component';
 import { OptionsComponent } from './options/options.component';
 import { LinksComponent } from './links/links.component';
-import { GmailComponent } from './gmail/gmail.component';
 import { ToolsComponent } from './tools/tools.component';
-import { AddNoteComponent } from './add-note/add-note.component';
+import { AddEditNoteComponent } from './add-edit-note/add-edit-note.component';
 import { AddLinkComponent } from './add-link/add-link.component';
 import { LinkComponent } from './links/link/link.component';
 import { NoteComponent } from './notes/note/note.component';
@@ -18,6 +17,9 @@ import { TimerComponent } from './tools/timer/timer.component';
 import {UserModule} from "./user/user.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {XunkCalendarModule} from "xunk-calendar";
+import {NoteService} from "./shared/note.service";
+import {ClickOutsideDirective} from "./directives/click-outside.directive";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,23 +28,26 @@ import {XunkCalendarModule} from "xunk-calendar";
     NotesComponent,
     OptionsComponent,
     LinksComponent,
-    GmailComponent,
     ToolsComponent,
-    AddNoteComponent,
+    AddEditNoteComponent,
     AddLinkComponent,
     LinkComponent,
     NoteComponent,
     StopwatchComponent,
     CalculatorComponent,
-    TimerComponent
+    TimerComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
     UserModule,
     BrowserAnimationsModule,
-    XunkCalendarModule
+    XunkCalendarModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    NoteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

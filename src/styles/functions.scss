@@ -3,3 +3,21 @@
   border: none;
   outline: none;
 }
+
+@mixin flex {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+}
+
+@mixin flex-align-center {
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+@mixin flex-justify-center {
+  justify-content: center;
+  flex-direction: column;
+}

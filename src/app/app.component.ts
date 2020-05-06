@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NoteService} from "./shared/note.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'your-home-page';
+
+  constructor(public noteService: NoteService) {
+
+  }
 }

@@ -1,1 +1,16 @@
-<p>note works!</p>
+<div class="container-fluid">
+  <div class="note" (mouseover)="mouseHover()" (mouseleave)="mouseLeave()">
+    <span id="title">Note #{{note.id}}</span>
+    <p></p>
+    <span id="content">{{ note.content | slice: 0:255}}</span>
+    <div class="buttons" *ngIf="hoverOnNote">
+      <button (click)="editNote(note.id, note.content)">
+        <img src="../../../assets/images/edit.svg" width="10" alt="Edit" title="Edit">
+      </button>
+      <button (click)="removeNote(note.id)">
+        <img src="../../../assets/images/remove.svg" width="10" alt="Remove" title="Remove">
+      </button>
+    </div>
+  </div>
+</div>
+
