@@ -20,6 +20,9 @@ import {XunkCalendarModule} from "xunk-calendar";
 import {NoteService} from "./shared/note.service";
 import {ClickOutsideDirective} from "./directives/click-outside.directive";
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {LinkService} from "./shared/link.service";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -44,9 +47,12 @@ import {FormsModule} from "@angular/forms";
     BrowserAnimationsModule,
     XunkCalendarModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [
-    NoteService
+    NoteService,
+    LinkService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

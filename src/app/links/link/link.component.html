@@ -1,1 +1,13 @@
-<p>link works!</p>
+<div class="link" [title]="this.title" (click)="clickOnLink()">
+  <div class="content">
+    <img *ngIf="!imageIsLoading"
+         [src]="imageToShow"
+         alt="Icon"
+         [width]="isBig ? 64 : 32"
+    >
+    <ng-container *ngIf="imageIsLoading">
+      <img src="../../../assets/images/failureImage.svg" alt="fail to download icon" width="64">
+    </ng-container>
+    <span class="link-name">{{link.url | slice: 0:15}}</span>
+  </div>
+</div>

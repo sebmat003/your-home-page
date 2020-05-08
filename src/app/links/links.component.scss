@@ -1,0 +1,14 @@
+.container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+  height: 30rem;
+  overflow: auto;
+
+  .link {
+    margin: 2% 0;
+    cursor: pointer;
+  }
+}
+

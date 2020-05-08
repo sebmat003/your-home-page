@@ -7,8 +7,6 @@
   text-align: left;
   color: white;
   height: auto;
-
-
 }
 
 button {
@@ -32,20 +30,8 @@ button {
 
 .notes {
   height: 75%;
-  max-height: 450px;
+  max-height: 30rem;
   overflow-y: auto;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 20px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: white;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: $primary-color;
-}
 
