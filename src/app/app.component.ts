@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NoteService} from "./shared/note.service";
+import {LinkService} from "./shared/link.service";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import {NoteService} from "./shared/note.service";
 export class AppComponent {
   title = 'your-home-page';
 
-  constructor(public noteService: NoteService) {
+  constructor(public noteService: NoteService, public linkService: LinkService) {
 
   }
 }

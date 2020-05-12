@@ -26,7 +26,6 @@ export class LinkComponent implements OnInit {
     let reader = new FileReader();
     reader.addEventListener("load", ()=> {
       this.imageToShow = reader.result;
-      console.log(this.imageToShow);
     }, false)
 
     if(image) {
@@ -52,6 +51,5 @@ export class LinkComponent implements OnInit {
 
   clickOnLink() {
     window.open('https://' + this.link.url, '_blank');
-
   }
 }

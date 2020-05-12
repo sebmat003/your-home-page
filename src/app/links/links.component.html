@@ -1,17 +1,40 @@
 <div class="container">
   <div class="row">
-    <ng-container *ngFor="let link of this.links; let i = index">
-      <div class="link col-4" *ngIf="i <= 2">
-        <app-link [link]="link" [isBig]="true"></app-link>
-      </div>
-    </ng-container>
+    <div class="col-1 link-order">
+      <button>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+    <div class="col-1 link-order">
+      <button>
+        <span class="big-tile"></span>
+        <span class="small-tile"></span>
+        <span class="small-tile"></span>
+      </button>
+    </div>
+    <div class="col-10 plus-button text-right">
+      <button (click)="addNewLink()">
+        +
+      </button>
+    </div>
   </div>
-  <div class="row">
-    <ng-container *ngFor="let link of this.links; let i = index">
-      <div class="link col-4 col-md-2" *ngIf="i > 2">
-        <app-link [link]="link" [isBig]="false"></app-link>
-      </div>
-    </ng-container>
+  <div class="links">
+    <div class="row">
+      <ng-container *ngFor="let link of this.links; let i = index">
+        <div class="big-link col-4" *ngIf="i <= 2">
+          <app-link [link]="link" [isBig]="true"></app-link>
+        </div>
+      </ng-container>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let link of this.links; let i = index">
+        <div class="small-link col-4 col-md-2" *ngIf="i > 2">
+          <app-link [link]="link" [isBig]="false"></app-link>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>
 

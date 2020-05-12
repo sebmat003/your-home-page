@@ -6,25 +6,46 @@ import {Link} from "../links/link/link.model";
 
 @Injectable()
 export class LinkService {
+  addNew: boolean = false;
+  editExisting: boolean = false;
+  preventFromInstantCloseWindow: boolean = false;
+
+  currentLink: Link = {
+    id: null,
+    number_of_visits: 0,
+    last_visit: null,
+    url: null
+  }
+
+
   constructor(private http: HttpClient) {}
 
-  getIcon(url: string):Observable<Blob> {
+  getIcon(url: string): Observable<Blob> {
     return this.http.get('https://api.faviconkit.com/' + url + '/100', {responseType: "blob"})
   }
 
-  newLink(url: string) {
-
+  newLink(link: Link) {
+    this.defaultLinks.push(link);
   }
 
   editLink(id: number, url: string) {
-
+    this.defaultLinks.forEach((link) => {
+      if (link.id == id) {
+        link.url = url;
+      }
+    })
   }
 
   updateLink(id: number, last_visit: number, number_of_clicks: number) {
-
+    this.defaultLinks.forEach((link) => {
+      if (link.id == id) {
+        link.number_of_visits++;
+        link.last_visit = last_visit;
+      }
+    })
   }
 
-  defaultsLinks: Link[] = [
+  defaultLinks: Link[] = [
     {
       id: 1,
       last_visit: Date.now(),

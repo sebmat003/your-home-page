@@ -9,12 +9,11 @@ import {Link} from "./link/link.model";
 })
 export class LinksComponent implements OnInit {
   links: Link[];
-  indexOfLink: number;
 
   constructor(private linkService: LinkService) { }
 
   ngOnInit(): void {
-    this.links = this.linkService.defaultsLinks;
+    this.links = this.linkService.defaultLinks;
     this.sortByNumberOfVisitsDesc(this.links);
   }
 
@@ -24,4 +23,7 @@ export class LinksComponent implements OnInit {
     } )
   }
 
+  addNewLink() {
+    this.linkService.addNew = true;
+  }
 }

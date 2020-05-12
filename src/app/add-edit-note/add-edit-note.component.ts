@@ -21,6 +21,7 @@ export class AddEditNoteComponent implements OnInit {
   close() {
     if(this.noteService.preventFromInstantCloseWindow) {
       this.noteService.addNew = false;
+      this.noteService.editExisting = false;
       this.noteService.preventFromInstantCloseWindow = false;
     } else {
       this.noteService.preventFromInstantCloseWindow = true;

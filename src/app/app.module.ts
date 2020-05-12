@@ -8,7 +8,7 @@ import { OptionsComponent } from './options/options.component';
 import { LinksComponent } from './links/links.component';
 import { ToolsComponent } from './tools/tools.component';
 import { AddEditNoteComponent } from './add-edit-note/add-edit-note.component';
-import { AddLinkComponent } from './add-link/add-link.component';
+import {AddEditLinkComponent} from './add-edit-link/add-edit-link.component';
 import { LinkComponent } from './links/link/link.component';
 import { NoteComponent } from './notes/note/note.component';
 import { StopwatchComponent } from './tools/stopwatch/stopwatch.component';
@@ -33,7 +33,7 @@ import {DatePipe} from "@angular/common";
     LinksComponent,
     ToolsComponent,
     AddEditNoteComponent,
-    AddLinkComponent,
+    AddEditLinkComponent,
     LinkComponent,
     NoteComponent,
     StopwatchComponent,

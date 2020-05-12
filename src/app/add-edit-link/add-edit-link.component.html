@@ -1,0 +1,62 @@
+<div class="dark-background">
+</div>
+
+<ng-container *ngIf="this.linkService.addNew">
+  <div class="container" (clickOutside)="close()">
+    <div class="row">
+      <div class="title col-12">
+        <p>Add a link</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="url col-12">
+        <label for="url">Type url of a link</label>
+        <textarea [(ngModel)]="this.urlValue" name="url" id="url" rows="4"
+                  [maxLength]="50" [minLength]="1">
+        </textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="button col-4">
+        <button type="button" (click)="clear()">Clear</button>
+      </div>
+      <div class="button col-4">
+        <button type="button" (click)="add()"
+                [disabled]="this.urlValue == null || this.urlValue == ''">Add
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="this.linkService.editExisting">
+  <div class="container" (clickOutside)="close()">
+    <div class="row">
+      <div class="title col-12">
+        <p>Edit a link</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="url col-12">
+        <label for="url_1">Type url of a link</label>
+        <textarea [(ngModel)]="this.urlValue" name="url" id="url_1" rows="4"
+                  [maxLength]="50" [minLength]="1">
+        </textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="button col-4">
+        <button type="button" (click)="clear()">Clear</button>
+      </div>
+      <div class="button col-4">
+        <button type="button" (click)="save()"
+                [disabled]="this.urlValue == null || this.urlValue == ''">Save
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>

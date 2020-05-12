@@ -1,7 +1,20 @@
+@import 'colors';
+
 @mixin clear_style_in_button {
   background: none;
   border: none;
   outline: none;
+}
+
+@mixin plus_button {
+  @include clear_style_in_button();
+  color: $primary-lighten-color;
+  font-size: 2rem;
+  transition: all 0.2s;
+
+  &:hover, &:active {
+    color: $primary-color;
+  }
 }
 
 @mixin flex {

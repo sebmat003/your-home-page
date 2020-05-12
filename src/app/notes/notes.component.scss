@@ -1,7 +1,6 @@
 @import '../../styles/functions';
 @import '../../styles/colors';
 
-
 .container {
   margin-bottom: 3%;
   text-align: left;
@@ -9,12 +8,13 @@
   height: auto;
 }
 
-button {
-  @include clear_style_in_button;
+.plus-button button {
+  @include plus_button();
 }
 
-.notes-header  {
+.notes-header {
   text-align: left;
+
   p {
     padding: 0;
     margin: 0;

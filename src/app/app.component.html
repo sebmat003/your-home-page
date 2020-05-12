@@ -34,5 +34,9 @@
   </div>
   <app-add-edit-note *ngIf="noteService.addNew || noteService.editExisting"
                      [currentNote]="noteService.currentEditedNote"></app-add-edit-note>
+  <app-add-edit-link *ngIf="linkService.addNew || linkService.editExisting"
+                     [currentLink]="linkService.currentLink">
+  </app-add-edit-link>
+
 </div>
 
